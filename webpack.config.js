@@ -1,10 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index',
+  entry: {
+    content: './src/index',
+    popup: './src/popup/index.js'
+  },
   output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.js'
+      filename: '[name].bundle.js'
   },
   externals: {
       "ramda": "R"
