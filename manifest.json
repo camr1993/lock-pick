@@ -6,11 +6,11 @@
     {
       "matches": ["<all_urls>"],
       
-      "js": ["bundle.js"]
+      "js": ["./dist/content.bundle.js"]
     }
   ],
   "browser_action": {
-    "default_popup": "index.html",
+    "default_popup": "./src/popup/popup.html",
     "default_title": "lock-pick",
     "default_icon": "icon.png"
   },
