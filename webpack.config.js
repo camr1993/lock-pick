@@ -1,19 +1,26 @@
+const path = require('path');
+
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/index',
   output: {
-      path: __dirname,
+      path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js'
   },
   externals: {
       "ramda": "R"
   },
   module: {
-      loaders: [
-          {
-              test: /\.js$/,
-              loader: 'babel-loader'
-          }
-      ]
+    rules: [
+      {
+        test: /\.(js|ts)$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
-  devtool: 'source-map'
+  resolve: {
+    extensions: [".tsx", ".ts", ".js", ".json"]
+  },
+  'mode': 'development',
+  devtool: 'inline-source-map'
 };
