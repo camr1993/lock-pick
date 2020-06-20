@@ -3,8 +3,8 @@ body {
 }
 
 #main {
-  height: 300px;
-  width: 200px;
+  height: 195px;
+  width: 230px;
   display: flex;
   flex-direction: column;
 }
@@ -33,12 +33,72 @@ body {
   font-weight: 12px;
 }
 
-#toggle {
+#toggle-div {
   display: flex;
   justify-content: space-between;
   padding-left: 15px;
   padding-right: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-size: 14px;
   font-weight: 13px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+.switch::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: white;
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s;
+}
+
+.checkbox:checked + .switch::after {
+  left: 20px;
+}
+.checkbox:checked + .switch {
+  background-color: #7983ff;
+}
+.checkbox {
+  display: none;
+}
+
+.hint-button {
+  width: 90px;
+  height: 30px;
+  background-color: rgb(52, 123, 255);
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0px 0.7px 2px black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.hint-button:hover {
+  background-color: rgb(42, 97, 199);
+}
+
+#button-div {
+  display: flex;
+  margin-left: 15px;
+  margin-right: 15px;
+  justify-content: space-between;
+}
+
+#report {
+  margin-top: 5px;
+  align-self: center;
 }
