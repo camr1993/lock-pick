@@ -14,7 +14,7 @@ body {
   display: flex;
   align-items: center;
   padding-left: 15px;
-  border-bottom: solid 1px rgb(209, 209, 209);
+  border-bottom: solid 0.3px rgb(209, 209, 209);
   margin-bottom: 15px;
 }
 
@@ -31,4 +31,14 @@ body {
 #title2 {
   font-size: 17px;
   font-weight: 12px;
+}
+
+#toggle {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 13px;
 }
