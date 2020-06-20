@@ -1,3 +1,3 @@
-import init from './background';
-alert('hi there')
-init();
+import init from './background'
+// alert('hi there')
+init()
