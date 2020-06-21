@@ -1,14 +1,23 @@
 import store from '../store'
 
-document.addEventListener(
-  'DOMContentLoaded',
-  function () {
-    document.querySelector('button').addEventListener('click', onclick, false)
+// JavaScript for popup.html
+document.addEventListener('DOMContentLoaded', eventListeners(), false)
 
-    function onclick() {
-      console.table(store.passwordHints)
-      // alert('hi there from the popup')
-    }
-  },
-  false
-)
+function eventListeners() {
+  document
+    .getElementById('show-rules-btn')
+    .addEventListener('click', clickShowRules, false)
+  document
+    .getElementById('add-rules-btn')
+    .addEventListener('click', clickAddRules, false)
+}
+
+function clickShowRules() {
+  console.table(store.passwordHints)
+  alert('Show Rules Here')
+}
+
+function clickAddRules() {
+  console.table(store.passwordHints)
+  alert('Add Rules')
+}
