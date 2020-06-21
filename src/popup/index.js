@@ -14,10 +14,28 @@ function eventListeners() {
 
 function clickShowRules() {
   console.table(store.passwordHints)
-  alert('Show Rules Here')
+  console.log('Here', store)
+  alert(`Password Hints: ${store.getHints('amazon')}`)
 }
 
 function clickAddRules() {
-  console.table(store.passwordHints)
-  alert('Add Rules')
+  const main = document.getElementById('main')
+  const newTextarea = addTextarea()
+  newTextarea.placeholder = 'Add Rules'
+  main.insertBefore(newTextarea, main.childNodes[7])
+  document.getElementById('add-rules-btn').disabled = true
+}
+
+function addTextarea() {
+  const main = document.getElementById('main')
+  main.style.height = '320px'
+  const newText = document.createElement('textarea')
+  newText.style.resize = 'none'
+  newText.style.height = '100px'
+  newText.style.marginLeft = '15px'
+  newText.style.marginRight = '15px'
+  newText.style.marginBottom = '15px'
+  newText.style.marginTop = '10px'
+  newText.style.fontFamily = 'system-ui, sans-serif'
+  return newText
 }

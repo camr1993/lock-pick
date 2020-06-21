@@ -2,10 +2,13 @@
   "name": "lock-pick",
   "version": "1.0",
   "manifest_version": 2,
+  "background": {
+    "scripts": ["src/background.js"]
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      
+
       "js": ["./dist/content.bundle.js"]
     }
   ],
@@ -14,8 +17,5 @@
     "default_title": "lock-pick",
     "default_icon": "icon.png"
   },
-  "permissions": [
-    "tabs",
-    "storage"
-  ]
+  "permissions": ["tabs", "storage"]
 }
