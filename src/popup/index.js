@@ -21,7 +21,7 @@ function clickShowRules() {
 function clickAddRules() {
   const main = document.getElementById('main')
   const newTextarea = addTextarea()
-  newTextarea.placeholder = 'Add Rules'
+  newTextarea.placeholder = 'Add password requirements...'
   main.insertBefore(newTextarea, main.childNodes[7])
   document.getElementById('add-rules-btn').disabled = true
 }
@@ -37,5 +37,9 @@ function addTextarea() {
   newText.style.marginBottom = '15px'
   newText.style.marginTop = '10px'
   newText.style.fontFamily = 'system-ui, sans-serif'
+  newText.style.backgroundColor = 'rgb(219, 219, 219)'
+  newText.style.border = '0'
+  newText.style.borderRadius = '2px'
+  newText.style.padding = '5px'
   return newText
 }
