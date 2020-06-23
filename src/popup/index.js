@@ -23,10 +23,12 @@ function clickToggle() {
 }
 
 function disableBtns() {
-  $('.hint-button').css({
-    backgroundColor: 'rgb(160, 160, 160)',
-    cursor: 'auto',
-  })
+  $('.hint-button')
+    .css({
+      backgroundColor: 'rgb(160, 160, 160)',
+      cursor: 'auto',
+    })
+    .unbind('mouseenter mouseleave')
 }
 
 function enableBtns() {
