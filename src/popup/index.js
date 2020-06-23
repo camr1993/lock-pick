@@ -6,18 +6,54 @@ $(document).ready(function () {
 })
 
 function eventListeners() {
+  $('#toggle').on('click', clickToggle)
   $('#show-rules-btn').on('click', clickShowRules)
   $('#add-rules-btn').on('click', clickAddRules)
   $('#report').on('click', clickReport)
 }
 
+function clickToggle() {
+  console.log('toggle', store.toggle)
+  store.toggleOnOff()
+  if (store.toggle) {
+    enableBtns()
+  } else {
+    disableBtns()
+  }
+}
+
+function disableBtns() {
+  $('.hint-button').css({
+    backgroundColor: 'rgb(160, 160, 160)',
+    cursor: 'auto',
+  })
+}
+
+function enableBtns() {
+  $('.hint-button')
+    .css({
+      backgroundColor: 'rgb(52, 123, 255)',
+      cursor: 'pointer',
+    })
+    .hover(
+      function () {
+        $(this).css({ backgroundColor: 'rgb(42, 97, 199)' })
+      },
+      function () {
+        $(this).css({ backgroundColor: 'rgb(52, 123, 255)' })
+      }
+    )
+}
+
 function clickShowRules() {
+  if (!store.toggle) return
   console.table(store.passwordHints)
   console.log('Here', store)
   alert(`Password Hints: ${store.getHints('amazon')}`)
 }
 
 function clickAddRules() {
+  if (!store.toggle) return
   const textarea = checkForTextarea()
   textarea.attr('placeholder', 'Add password requirements...')
   checkForSubmitBtn()
