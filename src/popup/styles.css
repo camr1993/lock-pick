@@ -101,4 +101,7 @@ body {
 #report {
   margin-top: 5px;
   align-self: center;
+  text-decoration: underline;
+  color: purple;
+  cursor: pointer;
 }
